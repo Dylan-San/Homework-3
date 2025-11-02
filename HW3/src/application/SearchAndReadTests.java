@@ -9,7 +9,7 @@ import java.util.List;
  * This class simulates automated tests without using JUnit.
  * It validates that question and answer retrieval methods behave as expected.
  * </p>
- * <p><b>Author:</b> Victor</p>
+ * <p><b>Author:</b> Dylan</p>
  * <p><b>Version:</b> HW3</p>
  * <p><b>Created:</b> Fall 2025</p>
  */
