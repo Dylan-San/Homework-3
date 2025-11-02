@@ -4,14 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Automated Tests for User Story 3: SEARCH AND READ QUESTIONS/ANSWERS
- * (Implemented and documented by Victor)
- *
+ * Automated Tests for User Story 3: SEARCH AND READ QUESTIONS/ANSWERS.
+ * <p>
  * This class simulates automated tests without using JUnit.
- * It verifies that question and answer retrieval functions behave correctly.
+ * It validates that question and answer retrieval methods behave as expected.
+ * </p>
+ * <p><b>Author:</b> Victor</p>
+ * <p><b>Version:</b> HW3</p>
+ * <p><b>Created:</b> Fall 2025</p>
  */
 public class SearchAndReadTests {
 
+    /**
+     * Main entry point that executes all five automated tests sequentially.
+     *
+     * @param args command-line arguments (not used)
+     */
     public static void main(String[] args) {
         System.out.println("=== Running Automated Tests for User Story 3 ===\n");
 
@@ -24,7 +32,10 @@ public class SearchAndReadTests {
         System.out.println("\n=== All tests executed. Review output for results. ===");
     }
 
-    // Get Question by ID
+    /**
+     * Test 1: Retrieves a Question by ID and validates that
+     * all properties (title, author, and ID) are correct.
+     */
     private static void testGetQuestionById() {
         System.out.println("Test 1: Get Question by ID");
 
@@ -40,7 +51,10 @@ public class SearchAndReadTests {
         }
     }
 
-    // Get All Questions
+    /**
+     * Test 2: Ensures that retrieving all questions returns
+     * a non-empty list with valid Question objects.
+     */
     private static void testGetAllQuestions() {
         System.out.println("Test 2: Get All Questions");
 
@@ -55,7 +69,10 @@ public class SearchAndReadTests {
         }
     }
 
-    //  Get All Answers for a Question
+    /**
+     * Test 3: Confirms that all answers related to a given question
+     * are correctly counted and returned.
+     */
     private static void testGetAllAnswersForQuestion() {
         System.out.println("Test 3: Get All Answers for a Question");
 
@@ -70,7 +87,10 @@ public class SearchAndReadTests {
         }
     }
 
-    //  Search for Nonexistent Question
+    /**
+     * Test 4: Verifies that searching for a nonexistent question
+     * returns null and does not cause system errors.
+     */
     private static void testSearchForNonexistentQuestion() {
         System.out.println("Test 4: Search for Nonexistent Question");
 
@@ -82,11 +102,13 @@ public class SearchAndReadTests {
         }
     }
 
-    // Get Answer by ID
+    /**
+     * Test 5: Retrieves an Answer by ID and validates that
+     * the ID matches the expected resolved answer.
+     */
     private static void testGetAnswerById() {
         System.out.println("Test 5: Get Answer by ID");
 
-        // Simulate answer retrieval
         String expectedAnswerId = "ANS-001";
         Question q = new Question("What is inheritance?", "Describe types of inheritance.", "Charlie");
         q.markAsResolved(expectedAnswerId);
