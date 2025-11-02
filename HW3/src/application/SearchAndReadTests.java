@@ -10,7 +10,7 @@ import java.util.List;
  * functionality without relying on JUnit. Each test serves as an assertion
  * that the underlying methods conform to the expected behavior.
  * </p>
- * <p><b>Author:</b> Victor</p>
+ * <p><b>Author:</b> Dylan</p>
  * <p><b>Version:</b> HW3</p>
  * <p><b>Created:</b> Fall 2025</p>
  *
