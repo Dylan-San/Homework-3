@@ -6,19 +6,31 @@ import java.util.List;
 /**
  * Automated Tests for User Story 3: SEARCH AND READ QUESTIONS/ANSWERS.
  * <p>
- * This class simulates automated tests without using JUnit.
- * It validates that question and answer retrieval methods behave as expected.
+ * This class provides automated tests for question and answer retrieval
+ * functionality without relying on JUnit. Each test serves as an assertion
+ * that the underlying methods conform to the expected behavior.
  * </p>
- * <p><b>Author:</b> Dylan</p>
+ * <p><b>Author:</b> Victor</p>
  * <p><b>Version:</b> HW3</p>
  * <p><b>Created:</b> Fall 2025</p>
+ *
+ * <p><b>Principles:</b></p>
+ * <ul>
+ *     <li>All doc comments specify method behavior and expected outcomes.</li>
+ *     <li>Assertions describe implementation-independent conditions that must be satisfied.</li>
+ *     <li>Each test documents preconditions, postconditions, and observable behavior.</li>
+ * </ul>
  */
 public class SearchAndReadTests {
 
     /**
-     * Main entry point that executes all five automated tests sequentially.
+     * Executes all five automated tests for User Story 3.
+     * <p>
+     * Preconditions: none. Postconditions: All tests are executed, and
+     * the output provides a pass/fail status for each test case.
+     * </p>
      *
-     * @param args command-line arguments (not used)
+     * @param args not used in this implementation
      */
     public static void main(String[] args) {
         System.out.println("=== Running Automated Tests for User Story 3 ===\n");
@@ -33,8 +45,16 @@ public class SearchAndReadTests {
     }
 
     /**
-     * Test 1: Retrieves a Question by ID and validates that
-     * all properties (title, author, and ID) are correct.
+     * Test 1: Retrieves a Question by ID.
+     * <p>
+     * Asserts that a newly created Question object returns the correct ID,
+     * title, and author. This test ensures that the getter methods provide
+     * consistent and correct values.
+     * </p>
+     * <p>
+     * Preconditions: A Question object exists. Postconditions: The
+     * Question's ID, title, and author match the expected values.
+     * </p>
      */
     private static void testGetQuestionById() {
         System.out.println("Test 1: Get Question by ID");
@@ -52,8 +72,16 @@ public class SearchAndReadTests {
     }
 
     /**
-     * Test 2: Ensures that retrieving all questions returns
-     * a non-empty list with valid Question objects.
+     * Test 2: Retrieves all questions.
+     * <p>
+     * Asserts that a list containing multiple Question objects is non-empty,
+     * and that all elements are valid Question instances. This ensures that
+     * bulk retrieval behaves as expected.
+     * </p>
+     * <p>
+     * Preconditions: A non-empty collection of questions exists. Postconditions:
+     * The returned list contains at least one Question object.
+     * </p>
      */
     private static void testGetAllQuestions() {
         System.out.println("Test 2: Get All Questions");
@@ -70,8 +98,15 @@ public class SearchAndReadTests {
     }
 
     /**
-     * Test 3: Confirms that all answers related to a given question
-     * are correctly counted and returned.
+     * Test 3: Retrieves all answers for a given Question.
+     * <p>
+     * Asserts that the total answer count matches the number of simulated
+     * answers added. This verifies that answer tracking works correctly.
+     * </p>
+     * <p>
+     * Preconditions: A Question object exists. Postconditions: The Question's
+     * total answer count is updated correctly to reflect all answers.
+     * </p>
      */
     private static void testGetAllAnswersForQuestion() {
         System.out.println("Test 3: Get All Answers for a Question");
@@ -88,8 +123,16 @@ public class SearchAndReadTests {
     }
 
     /**
-     * Test 4: Verifies that searching for a nonexistent question
-     * returns null and does not cause system errors.
+     * Test 4: Searches for a nonexistent Question.
+     * <p>
+     * Asserts that searching for a question ID that does not exist returns
+     * null and does not throw any exceptions. This ensures robust error
+     * handling for invalid inputs.
+     * </p>
+     * <p>
+     * Preconditions: The question ID is invalid. Postconditions: The
+     * system returns null without errors.
+     * </p>
      */
     private static void testSearchForNonexistentQuestion() {
         System.out.println("Test 4: Search for Nonexistent Question");
@@ -103,8 +146,16 @@ public class SearchAndReadTests {
     }
 
     /**
-     * Test 5: Retrieves an Answer by ID and validates that
-     * the ID matches the expected resolved answer.
+     * Test 5: Retrieves an Answer by ID.
+     * <p>
+     * Asserts that marking a question as resolved with a given answer ID
+     * correctly updates the resolved answer ID. This ensures proper linking
+     * between questions and their resolved answers.
+     * </p>
+     * <p>
+     * Preconditions: A Question object exists. Postconditions: The
+     * resolvedAnswerId field matches the expected answer ID.
+     * </p>
      */
     private static void testGetAnswerById() {
         System.out.println("Test 5: Get Answer by ID");
