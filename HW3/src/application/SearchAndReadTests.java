@@ -47,24 +47,22 @@ public class SearchAndReadTests {
     /**
      * Test 1: Retrieves a Question by ID.
      * <p>
-     * Asserts that a newly created Question object returns the correct ID,
-     * title, and author. This test ensures that the getter methods provide
-     * consistent and correct values.
-     * </p>
-     * <p>
-     * Preconditions: A Question object exists. Postconditions: The
-     * Question's ID, title, and author match the expected values.
+     * Example: Donkey Kong Country question. Validates title, author, and ID.
      * </p>
      */
     private static void testGetQuestionById() {
         System.out.println("Test 1: Get Question by ID");
 
-        Question q = new Question("Why is Java popular?", "Because of its portability.", "Alice");
+        Question q = new Question(
+            "Who is the main antagonist in Donkey Kong Country?",
+            "Identify the main villain in the original DKC game series.",
+            "Dylan"
+        );
         String expectedId = q.getQuestionId();
 
         if (q.getQuestionId().equals(expectedId)
-                && q.getTitle().equals("Why is Java popular?")
-                && q.getAuthor().equals("Alice")) {
+                && q.getTitle().equals("Who is the main antagonist in Donkey Kong Country?")
+                && q.getAuthor().equals("Dylan")) {
             System.out.println("Passed: Question retrieved successfully with correct ID and properties.\n");
         } else {
             System.out.println("Failed: Question data mismatch or ID incorrect.\n");
@@ -74,21 +72,23 @@ public class SearchAndReadTests {
     /**
      * Test 2: Retrieves all questions.
      * <p>
-     * Asserts that a list containing multiple Question objects is non-empty,
-     * and that all elements are valid Question instances. This ensures that
-     * bulk retrieval behaves as expected.
-     * </p>
-     * <p>
-     * Preconditions: A non-empty collection of questions exists. Postconditions:
-     * The returned list contains at least one Question object.
+     * Example: Donkey Kong 64 and arcade questions. Verifies list is non-empty.
      * </p>
      */
     private static void testGetAllQuestions() {
         System.out.println("Test 2: Get All Questions");
 
         List<Question> questionList = new ArrayList<>();
-        questionList.add(new Question("Q1", "Body 1", "User1"));
-        questionList.add(new Question("Q2", "Body 2", "User2"));
+        questionList.add(new Question(
+            "What is the first level in Donkey Kong 64?",
+            "Provide the name of the opening stage in DKC64.",
+            "Dylan"
+        ));
+        questionList.add(new Question(
+            "When was the original Donkey Kong arcade game released?",
+            "Identify the year the classic arcade DK was released.",
+            "Dylan"
+        ));
 
         if (!questionList.isEmpty() && questionList.size() > 0) {
             System.out.println("Passed: System returned list of questions (" + questionList.size() + " found).\n");
@@ -100,18 +100,17 @@ public class SearchAndReadTests {
     /**
      * Test 3: Retrieves all answers for a given Question.
      * <p>
-     * Asserts that the total answer count matches the number of simulated
-     * answers added. This verifies that answer tracking works correctly.
-     * </p>
-     * <p>
-     * Preconditions: A Question object exists. Postconditions: The Question's
-     * total answer count is updated correctly to reflect all answers.
+     * Example: Counts simulated answers for Donkey Kong question.
      * </p>
      */
     private static void testGetAllAnswersForQuestion() {
         System.out.println("Test 3: Get All Answers for a Question");
 
-        Question q = new Question("What is polymorphism?", "Explain with an example.", "Bob");
+        Question q = new Question(
+            "How many Kongs are playable in Donkey Kong 64?",
+            "List all playable Kong characters in DKC64.",
+            "Dylan"
+        );
         q.incrementTotalAnswers();
         q.incrementTotalAnswers(); // Simulating two answers
 
@@ -125,13 +124,7 @@ public class SearchAndReadTests {
     /**
      * Test 4: Searches for a nonexistent Question.
      * <p>
-     * Asserts that searching for a question ID that does not exist returns
-     * null and does not throw any exceptions. This ensures robust error
-     * handling for invalid inputs.
-     * </p>
-     * <p>
-     * Preconditions: The question ID is invalid. Postconditions: The
-     * system returns null without errors.
+     * Example: Simulates a search for a DK question ID that doesn't exist.
      * </p>
      */
     private static void testSearchForNonexistentQuestion() {
@@ -148,20 +141,18 @@ public class SearchAndReadTests {
     /**
      * Test 5: Retrieves an Answer by ID.
      * <p>
-     * Asserts that marking a question as resolved with a given answer ID
-     * correctly updates the resolved answer ID. This ensures proper linking
-     * between questions and their resolved answers.
-     * </p>
-     * <p>
-     * Preconditions: A Question object exists. Postconditions: The
-     * resolvedAnswerId field matches the expected answer ID.
+     * Example: Who voiced Donkey Kong in the 2023 Super Mario Bros. movie.
      * </p>
      */
     private static void testGetAnswerById() {
         System.out.println("Test 5: Get Answer by ID");
 
-        String expectedAnswerId = "ANS-001";
-        Question q = new Question("What is inheritance?", "Describe types of inheritance.", "Charlie");
+        String expectedAnswerId = "DK-ANS-001";
+        Question q = new Question(
+            "Who voiced Donkey Kong in the 2023 Super Mario Bros. movie?",
+            "Provide the actor's name for Donkey Kong's voice.",
+            "Dylan"
+        );
         q.markAsResolved(expectedAnswerId);
 
         if (q.getResolvedAnswerId() != null && q.getResolvedAnswerId().equals(expectedAnswerId)) {
