@@ -7,8 +7,8 @@ import java.util.List;
  * Automated Tests for User Story 3: SEARCH AND READ QUESTIONS/ANSWERS.
  * <p>
  * This class provides automated tests for question and answer retrieval
- * functionality without relying on JUnit. Each test serves as an assertion
- * that the underlying methods conform to the expected behavior.
+ * functionality without relying on JUnit. Each test acts as an assertion
+ * to ensure the underlying methods behave as expected.
  * </p>
  *
  * <p><b>Author:</b> Dylan</p>
@@ -17,29 +17,27 @@ import java.util.List;
  *
  * <p><b>Principles:</b></p>
  * <ul>
- *     <li>All doc comments specify method behavior and expected outcomes.</li>
+ *     <li>All doc comments describe method behavior and expected outcomes.</li>
  *     <li>Assertions describe implementation-independent conditions that must be satisfied.</li>
  *     <li>Each test documents preconditions, postconditions, and observable behavior.</li>
  * </ul>
  *
- * <p><b>Reference for Javadoc Style:</b> Inspired by professional examples from 
- * <a href="https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html#terminology">
- * Oracle's Javadoc Tool Guide</a>, which demonstrates proper usage of 
- * {@link #main(String[])}, {@link Question#getQuestionId()}, and other {@link Question} methods.</p>
+ * <p><b>Javadoc Style Reference:</b> Inspired by Baeldung's guide on 
+ * {@link https://www.baeldung.com/javadoc-see-vs-link Javadoc @see vs {@link}} usage.</p>
  *
  * @see Question
- * @see <a href="https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html#terminology">Professional Javadoc Example</a>
+ * @see <a href="https://www.baeldung.com/javadoc-see-vs-link">Baeldung: Javadoc @see vs @link</a>
  */
 public class SearchAndReadTests {
 
     /**
-     * Executes all five automated tests for User Story 3.
+     * Executes all automated tests for User Story 3.
      * <p>
-     * Preconditions: none. Postconditions: All tests are executed, and
-     * the output provides a pass/fail status for each test case.
+     * Preconditions: none. Postconditions: All tests execute and print
+     * pass/fail status to the console.
      * </p>
      *
-     * @param args not used in this implementation
+     * @param args not used
      * @see #testGetQuestionById()
      * @see #testGetAllQuestions()
      * @see #testGetAllAnswersForQuestion()
@@ -59,14 +57,16 @@ public class SearchAndReadTests {
     }
 
     /**
-     * Test 1: Retrieves a {@link Question} by ID.
+     * Test 1: Retrieves a {@link Question} by its ID.
      * <p>
-     * Example: Donkey Kong Country question. Validates title, author, and ID.
+     * Example: Donkey Kong Country question. Validates {@link Question#getTitle()},
+     * {@link Question#getAuthor()}, and {@link Question#getQuestionId()}.
      * </p>
      *
      * @see Question#getQuestionId()
      * @see Question#getTitle()
      * @see Question#getAuthor()
+     * @see <a href="https://www.baeldung.com/javadoc-see-vs-link">Baeldung: @see vs {@link}</a>
      */
     private static void testGetQuestionById() {
         System.out.println("Test 1: Get Question by ID");
@@ -90,10 +90,11 @@ public class SearchAndReadTests {
     /**
      * Test 2: Retrieves all {@link Question} objects.
      * <p>
-     * Example: Donkey Kong 64 and arcade questions. Verifies list is non-empty.
+     * Example: Donkey Kong 64 and arcade questions. Ensures the returned list is non-empty.
      * </p>
      *
      * @see Question#Question(String, String, String)
+     * @see <a href="https://www.baeldung.com/javadoc-see-vs-link">Baeldung: @see vs {@link}</a>
      */
     private static void testGetAllQuestions() {
         System.out.println("Test 2: Get All Questions");
@@ -120,11 +121,13 @@ public class SearchAndReadTests {
     /**
      * Test 3: Retrieves all answers for a given {@link Question}.
      * <p>
-     * Example: Counts simulated answers for Donkey Kong question.
+     * Example: Counts simulated answers for a DKC64 question. Uses {@link Question#incrementTotalAnswers()}
+     * and verifies {@link Question#getTotalAnswers()}.
      * </p>
      *
      * @see Question#incrementTotalAnswers()
      * @see Question#getTotalAnswers()
+     * @see <a href="https://www.baeldung.com/javadoc-see-vs-link">Baeldung: @see vs {@link}</a>
      */
     private static void testGetAllAnswersForQuestion() {
         System.out.println("Test 3: Get All Answers for a Question");
@@ -135,7 +138,7 @@ public class SearchAndReadTests {
             "Dylan"
         );
         q.incrementTotalAnswers();
-        q.incrementTotalAnswers(); // Simulating two answers
+        q.incrementTotalAnswers(); // Simulate two answers
 
         if (q.getTotalAnswers() == 2) {
             System.out.println("Passed: Returned all answers for the question (2 total).\n");
@@ -147,15 +150,17 @@ public class SearchAndReadTests {
     /**
      * Test 4: Searches for a nonexistent {@link Question}.
      * <p>
-     * Example: Simulates a search for a DK question ID that doesn't exist.
+     * Example: Simulates a search for a question ID that does not exist. Ensures
+     * null is returned without throwing an exception.
      * </p>
      *
      * @see Question
+     * @see <a href="https://www.baeldung.com/javadoc-see-vs-link">Baeldung: @see vs {@link}</a>
      */
     private static void testSearchForNonexistentQuestion() {
         System.out.println("Test 4: Search for Nonexistent Question");
 
-        Question result = null; // Simulating a failed search
+        Question result = null; // Simulate failed search
         if (result == null) {
             System.out.println("Passed: Nonexistent question returned null (no crash or error).\n");
         } else {
@@ -167,10 +172,12 @@ public class SearchAndReadTests {
      * Test 5: Retrieves an answer by ID for a {@link Question}.
      * <p>
      * Example: Who voiced Donkey Kong in the 2023 Super Mario Bros. movie.
+     * Uses {@link Question#markAsResolved(String)} and verifies {@link Question#getResolvedAnswerId()}.
      * </p>
      *
      * @see Question#markAsResolved(String)
      * @see Question#getResolvedAnswerId()
+     * @see <a href="https://www.baeldung.com/javadoc-see-vs-link">Baeldung: @see vs {@link}</a>
      */
     private static void testGetAnswerById() {
         System.out.println("Test 5: Get Answer by ID");
