@@ -10,6 +10,7 @@ import java.util.List;
  * functionality without relying on JUnit. Each test serves as an assertion
  * that the underlying methods conform to the expected behavior.
  * </p>
+ *
  * <p><b>Author:</b> Dylan</p>
  * <p><b>Version:</b> HW3</p>
  * <p><b>Created:</b> Fall 2025</p>
@@ -20,6 +21,14 @@ import java.util.List;
  *     <li>Assertions describe implementation-independent conditions that must be satisfied.</li>
  *     <li>Each test documents preconditions, postconditions, and observable behavior.</li>
  * </ul>
+ *
+ * <p><b>Reference for Javadoc Style:</b> Inspired by professional examples from 
+ * <a href="https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html#terminology">
+ * Oracle's Javadoc Tool Guide</a>, which demonstrates proper usage of 
+ * {@link #main(String[])}, {@link Question#getQuestionId()}, and other {@link Question} methods.</p>
+ *
+ * @see Question
+ * @see <a href="https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html#terminology">Professional Javadoc Example</a>
  */
 public class SearchAndReadTests {
 
@@ -31,6 +40,11 @@ public class SearchAndReadTests {
      * </p>
      *
      * @param args not used in this implementation
+     * @see #testGetQuestionById()
+     * @see #testGetAllQuestions()
+     * @see #testGetAllAnswersForQuestion()
+     * @see #testSearchForNonexistentQuestion()
+     * @see #testGetAnswerById()
      */
     public static void main(String[] args) {
         System.out.println("=== Running Automated Tests for User Story 3 ===\n");
@@ -45,10 +59,14 @@ public class SearchAndReadTests {
     }
 
     /**
-     * Test 1: Retrieves a Question by ID.
+     * Test 1: Retrieves a {@link Question} by ID.
      * <p>
      * Example: Donkey Kong Country question. Validates title, author, and ID.
      * </p>
+     *
+     * @see Question#getQuestionId()
+     * @see Question#getTitle()
+     * @see Question#getAuthor()
      */
     private static void testGetQuestionById() {
         System.out.println("Test 1: Get Question by ID");
@@ -70,10 +88,12 @@ public class SearchAndReadTests {
     }
 
     /**
-     * Test 2: Retrieves all questions.
+     * Test 2: Retrieves all {@link Question} objects.
      * <p>
      * Example: Donkey Kong 64 and arcade questions. Verifies list is non-empty.
      * </p>
+     *
+     * @see Question#Question(String, String, String)
      */
     private static void testGetAllQuestions() {
         System.out.println("Test 2: Get All Questions");
@@ -98,10 +118,13 @@ public class SearchAndReadTests {
     }
 
     /**
-     * Test 3: Retrieves all answers for a given Question.
+     * Test 3: Retrieves all answers for a given {@link Question}.
      * <p>
      * Example: Counts simulated answers for Donkey Kong question.
      * </p>
+     *
+     * @see Question#incrementTotalAnswers()
+     * @see Question#getTotalAnswers()
      */
     private static void testGetAllAnswersForQuestion() {
         System.out.println("Test 3: Get All Answers for a Question");
@@ -122,10 +145,12 @@ public class SearchAndReadTests {
     }
 
     /**
-     * Test 4: Searches for a nonexistent Question.
+     * Test 4: Searches for a nonexistent {@link Question}.
      * <p>
      * Example: Simulates a search for a DK question ID that doesn't exist.
      * </p>
+     *
+     * @see Question
      */
     private static void testSearchForNonexistentQuestion() {
         System.out.println("Test 4: Search for Nonexistent Question");
@@ -139,10 +164,13 @@ public class SearchAndReadTests {
     }
 
     /**
-     * Test 5: Retrieves an Answer by ID.
+     * Test 5: Retrieves an answer by ID for a {@link Question}.
      * <p>
      * Example: Who voiced Donkey Kong in the 2023 Super Mario Bros. movie.
      * </p>
+     *
+     * @see Question#markAsResolved(String)
+     * @see Question#getResolvedAnswerId()
      */
     private static void testGetAnswerById() {
         System.out.println("Test 5: Get Answer by ID");
